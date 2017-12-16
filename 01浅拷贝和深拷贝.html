@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+
+  var dog={
+    name:"大黄",
+    type:"DH",
+    bark=function(){
+      console.log("汪汪")
+    },
+    son:{
+      name:"小黄"
+    }
+  };
+
+    var dog1={};
+    // for(var k in dog){
+    //   dog1[k]=dog[k];
+    // }
+
+  for(var k in dog){
+    if(typeof dog[k]=="object"){
+      var temp={};
+      for(var j in dog[k]){
+        temp[j]=dog[k][j];
+      }
+      dog1[k]=temp;
+    }else{
+      dog1[k]=dog[k];
+    }
+  }
+
+
+  </script>
+</body>
+</html>

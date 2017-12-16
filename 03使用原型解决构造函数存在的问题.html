@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+
+        // function Pig() {
+        //     this.weight = "200kg";
+        //     this.color = "white";
+        //     this.eat = function () {
+        //         console.log("吃的好饱呀！");
+        //     };
+        //     this.sleep = function() {
+        //         console.log("睡得好爽呀！ZZZzzzzz");
+        //     }
+        // }
+        
+//1. 利用对象的动态特性为原型对象添加属性和方法
+
+        function Pig() {
+            this.weight = "200kg";
+            this.color = "white";
+        }
+         Pig.prototype.eat = function () {
+             console.log("吃的好饱呀！");
+         }
+         Pig.prototype["sleep"] = function(){
+             console.log("睡得好爽呀！ZZZzzzzz");
+         }
+
+         var p = new Pig();
+         p.eat();
+         var p1 = new Pig();
+         p1.eat();
+         var p2 = new Pig();
+         p2.eat();
+         p2.sleep();
+         console.log(p.eat === p1.eat && p.eat === p2.eat);
+        
+
+  // 2. 直接为构造函数的prototype属性赋值一个新的对象！
+        function Pig() {
+            this.weight = "200kg";
+            this.color = "white";
+        }
+
+        Pig.prototype = {
+            name: "小花",
+            sayHello: function() {
+                console.log("....");
+            }
+        };
+
+        var p = new Pig();
+        p.sayHello();
+
+        console.log(p.name);
+
+
+  </script>
+</body>
+</html>

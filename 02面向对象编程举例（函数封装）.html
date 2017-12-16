@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+    <div>我是第1个div</div>
+    <div>我是第2个div</div>
+    <div>我是第3个div</div>
+    <p>我是第1个p</p>
+    <p>我是第2个p</p>
+    <p>我是第3个p</p>
+
+ <script>
+   function tag(tagname){
+    return document.getElementsByTagName(tagname);
+   }
+   function id(id){
+    return document.getElementById(id);
+   }
+
+
+   function setborder(eles){
+    for(var i=0;i<eles.length;i++){
+      var ele=eles[i];
+      ele.style.border="1px solid red";
+    }
+   }
+
+setborder(tag("div"))
+setborder(tag("p"))
+
+ </script>
+
+</body>
+
+</html>
